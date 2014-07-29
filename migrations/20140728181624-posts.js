@@ -12,7 +12,7 @@ module.exports = {
     content: DataTypes.TEXT,
     authorId:{
       type: DataTypes.INTEGER,
-      foriegnKey: true
+      foreignKey: true
       }
     })
     .complete(done)

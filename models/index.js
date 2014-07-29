@@ -24,7 +24,7 @@ Object.keys(db).forEach(function(modelName) {
 })
 
 //Associations
-db.author.hasMany(db.posts);
+db.author.hasMany(db.post);
 db.post.belongsTo(db.author);
 
 // db.post.create({content: "WoooHOOO!"})
@@ -36,16 +36,28 @@ db.post.belongsTo(db.author);
 //   .success(function(authorObj){
 //     console.log("Crazy", authorObj);
 //   });
+// author.setPost([task1, task2]).success(function() {
+
+// })
+
+// author.getPosts().success(function(moretasks) {
+
+// })
+
+
 
 db.post.create({content: "Along came a spider"})
   .success(function(post){
     db.author.find(1).success(function(author){
       author.setPosts([post])
         .success(function(author){
-         console.log(author)
+         console.log("Author: " + author + "Post: " + post)
       })
     });
 });
+
+
+
 
 
 module.exports = lodash.extend({
