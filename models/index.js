@@ -27,12 +27,12 @@ Object.keys(db).forEach(function(modelName) {
 db.author.hasMany(db.post);
 db.post.belongsTo(db.author);
 
-// db.post.create({content: "WoooHOOO!"})
+// db.post.create({content: "something profound"})
 //   .success(function(postObj){
 //     console.log("Crazy", postObj);
 //   });
 
-// db.author.create({name: "Ol Fitz"})
+// db.author.create({name: "Papa"})
 //   .success(function(authorObj){
 //     console.log("Crazy", authorObj);
 //   });
