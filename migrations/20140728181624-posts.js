@@ -9,13 +9,12 @@ module.exports = {
       },
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,
-    name: DataTypes.STRING
+    content: DataTypes.TEXT
     })
     .complete(done)
   },
 
-    done()
-  },
+
   down: function(migration, DataTypes, done) {
     // add reverting commands here, calling 'done' when finished
     migration.dropTable('posts')
