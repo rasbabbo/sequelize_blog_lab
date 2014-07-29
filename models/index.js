@@ -23,6 +23,31 @@ Object.keys(db).forEach(function(modelName) {
   }
 })
 
+//Associations
+db.author.hasMany(db.posts);
+db.post.belongsTo(db.author);
+
+// db.post.create({content: "WoooHOOO!"})
+//   .success(function(postObj){
+//     console.log("Crazy", postObj);
+//   });
+
+// db.author.create({name: "Ol Fitz"})
+//   .success(function(authorObj){
+//     console.log("Crazy", authorObj);
+//   });
+
+db.post.create({content: "Along came a spider"})
+  .success(function(post){
+    db.author.find(1).success(function(author){
+      author.setPosts([post])
+        .success(function(author){
+         console.log(author)
+      })
+    });
+});
+
+
 module.exports = lodash.extend({
   sequelize: sequelize,
   Sequelize: Sequelize

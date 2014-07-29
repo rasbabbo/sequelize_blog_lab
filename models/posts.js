@@ -1,6 +1,10 @@
 function Post(sequelize, DataTypes){
   return sequelize.define('post', {
-    name: DataTypes.TEXT
+    content: DataTypes.TEXT,
+     // authorId: {
+     //  type: DataTypes.INTEGER,
+     //  foreignKey: true
+     //  } 
   });
 };
 
